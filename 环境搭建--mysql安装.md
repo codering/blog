@@ -54,6 +54,10 @@ mysql -u root -p123456
 
 sudo /etc/init.d/mysql restart
 
+## 创建数据库
+
+CREATE DATABASE `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
 ## 常见问题
 
 1045 access denied for user ‘root’@’localhost(ip)’ using password yes
