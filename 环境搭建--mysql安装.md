@@ -6,7 +6,9 @@
 ```shell
 
 sudo apt-get install mysql-server
+
 sudo apt-get install mysql-client
+
 sudo apt-get install libmysqlclient-dev
 
 ```
@@ -39,11 +41,14 @@ mysql -u root -p123456
 在mysql环境中输入
 
 `grant all on *.* to zzb@’%’ identified by ‘password’;`
+
 或者
+
 `grant all on *.* to zzb@’%’ identified by ‘password’ with grand option;`
 
 - 刷新flush privileges
-flush privileges;
+
+`flush privileges;`
 
 - 重启mysql
 
@@ -54,6 +59,8 @@ sudo /etc/init.d/mysql restart
 1045 access denied for user ‘root’@’localhost(ip)’ using password yes
 
 1、mysql -u root -p;
+
 2、GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword' WITH GRANT OPTION;
+
 3、FLUSH PRIVILEGES;
 
