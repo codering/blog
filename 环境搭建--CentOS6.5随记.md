@@ -1,7 +1,7 @@
 在公司内网服务器上搭建环境，由于不能连外网，只能自己将软件拷贝上去安装（可能需要编译安装）。
 记录一些常用命令，以前总是用的时候重新google。
 
-`以下命令执行都是 root用户，遇到权限问题请加sudo`
+`以下命令执行都是 root用户，遇到权限问题请加sudo`
 
 ## ssh 相关命令
 
@@ -36,7 +36,7 @@ ssh-copy-id -i id_rsa.pub devServer
 
 ssh devServer
 
-# 在本地通过ssh执行远程服务上的命令，比如我在服务器上写了个上传的脚本，它可以将文件上传到另一台服务器上
+# 在本地通过ssh执行远程服务上的命令，比如我在服务器上写了个上传的脚本，它可以将文件上传到另一台服务器上
 
 ssh devServer "./scripts/upload.sh /tmp/test.tar.gz"
 
@@ -44,7 +44,7 @@ ssh devServer "./scripts/upload.sh /tmp/test.tar.gz"
 
 scp ./test.tar.gz devServer:/tmp/test.tar.gz
 
-# 端口映射, 用法很多,怕说不清楚,可以看看阮一峰的博客
+# 端口映射, 用法很多,怕说不清楚,可以看看阮一峰的博客
 
 ssh -L 8888:10.127.8.201:8180 devServer
 
@@ -91,7 +91,7 @@ java -version
 
 yum install gcc gcc-c++
 
-# 安装 pcre，当前最好不要安装pcre2，可能编译错误
+# 安装 pcre,当前最好不要安装pcre2，可能编译错误
 wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.40.tar.gz
 tar -zxf pcre-8.40.tar.gz
 cd pcre-8.40
