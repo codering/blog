@@ -1,7 +1,7 @@
 在公司内网服务器上搭建环境，由于不能连外网，只能自己将软件拷贝上去安装（可能需要编译安装）。
 记录一些常用命令，以前总是用的时候重新google。
 
-`以下命令执行都是root用户，遇到权限问题请加sudo`
+`以下命令执行都是 root用户，遇到权限问题请加sudo`
 
 ## ssh 相关命令
 
@@ -38,15 +38,15 @@ ssh devServer
 
 # 在本地通过ssh执行远程服务上的命令，比如我在服务器上写了个上传的脚本，它可以将文件上传到另一台服务器上
 
-ssh devServer "./scripts/upload.sh /tmp/test.tar.gz"
+ssh devServer "./scripts/upload.sh /tmp/test.tar.gz"
 
 # 文件上传到服务器
 
 scp ./test.tar.gz devServer:/tmp/test.tar.gz
 
-# 端口映射, 用法很多，怕说不清楚，可以看看阮一峰的博客
+# 端口映射, 用法很多,怕说不清楚,可以看看阮一峰的博客
 
-ssh -L 8888:10.127.8.201:8180 devServer
+ssh -L 8888:10.127.8.201:8180 devServer
 
 # 效果是 访问本地的127.0.0.1:8888端口就可以访问到10.127.8.201:8180
 
@@ -161,9 +161,9 @@ log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
 # 实例，假设为有个域名为 dopey.me, 我想对这个域名启用https, 当通过http访问时自动跳转到https.
 # 后端rest请求代理到后端服务器上8080端口上
 
-# 先申请证书，放到nginx安装目录中ssl目录
+# 先申请证书，放到nginx安装目录中ssl目录
 
-# 开始配置
+# 开始配置
 
 vi conf/adopey.me.conf
 
@@ -199,7 +199,7 @@ server {
       index  index.html;
    }
 
-   location /api {
+   location /api {
       proxy_pass http://127.0.0.1:8080/api;
       proxy_redirect off;
       proxy_set_header   Host $host:$server_port;
@@ -276,7 +276,3 @@ service jetty restart
 waiting ...
 
 ```
-
-
-
-
