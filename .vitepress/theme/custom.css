@@ -31,6 +31,21 @@
 .vp-doc p {
     font-size: 0.9375rem;
 }
+
+.vp-doc div[class*='language-'] {
+    margin: 16px 0;
+}
+
+@media (min-width: 640px) {
+    .vp-doc div[class*='language-'] {
+        margin: 16px 12px 16px 0px;
+    }
+
+    .vp-doc .custom-block {
+        margin: 16px 12px 16px 0px;
+    }
+}
+
 .title {
     color: var(--vp-c-text-1);
     font-size: 1.5rem !important;
